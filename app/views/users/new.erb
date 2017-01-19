@@ -1,0 +1,11 @@
+<h2>New User Registration</h2>
+  <%= erb :'/_errors', locals: {errors: @errors}, layout: false %>
+  <form action="/users" method="POST">
+    <label for="user[username]">Username:</label>
+    <input type="text" name="user[username]"><br>
+    <label for="user[email]">Email:</label>
+    <input type="email" name="user[email]"><br>
+    <label for="user[password]">Password:</label>
+    <input type="password" name="user[password]"><br><br>
+    <input type="submit" value="Register">
+  </form>
