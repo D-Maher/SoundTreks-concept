@@ -4,7 +4,7 @@ helpers do
   end
 
   def logged_in?
-    !!current_user 
+    !!current_user
   end
 
   def set_session(user)
@@ -18,11 +18,11 @@ end
 
 # Longhand for the '||=' expression in the 'current_user' method above:
 
-  # if @current_user                                        
-  #   @current_user                                         
+  # if @current_user
+  #   @current_user
   # else
-  #   @current_user = User.find_by(id: session[:user_id])   
-  #   return @current_user                                  
+  #   @current_user = User.find_by(id: session[:user_id])
+  #   return @current_user
   # end
 
   # PSEUDOCODE:

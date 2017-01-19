@@ -4,7 +4,7 @@ get '/users/new' do
 end
 
 
-# records the entered information into database as a new /user/xxx 
+# records the entered information into database as a new /user/xxx
 post '/users' do
 
 end
@@ -17,6 +17,6 @@ end
 
 
 # updates new information about user
-put '/users/:id' do 
+put '/users/:id' do
 
 end

@@ -1,9 +1,15 @@
-require 'bcrypt'
-
 class User < ActiveRecord::Base
-  
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 
+  has_many :playlists, foreign_key: :creator_id
+  has_many :sound_treks, through: :playlists
 
+  # POSSIBLE METHOD:
+  # def get_current_location
+
+  # end
 
   # BCrypt and Authentication
   def password
