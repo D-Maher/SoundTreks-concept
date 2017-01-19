@@ -13,7 +13,6 @@ helpers do
 end
 
 
-
 # NOTES
 
 # Longhand for the '||=' expression in the 'current_user' method above:

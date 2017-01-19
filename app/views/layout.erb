@@ -7,11 +7,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <!-- <title>SoundTreks</title> -->
 </head>
 <body>
+  <nav>
+    <ul class="navigation-bar">
+        <h1>SoundTreks</h1>
+        <% if logged_in? %>
+          <li><form action="/sessions" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input class="nav-item logout" type="submit" value="Logout">
+          </form></li>
+          <li><a href="/" class="nav-item">Welcome <%= current_user.username %></a></li>
+        <% else %>
+          <li><a href="/" class="nav-item">Home</a></li>
+          <li><a href="/users/new" class="nav-item">Register</a></li>
+          <li><a href="/sessions/new" class="nav-item">Login</a></li>
+        <% end %>
+      </ul>
+      </nav>
 
   <%= yield %>
-    
+
 </body>
 </html>

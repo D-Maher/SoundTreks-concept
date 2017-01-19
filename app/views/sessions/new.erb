@@ -1,0 +1,9 @@
+<h2>User Login</h2>
+  <%= erb :'/_errors', locals: {errors: @errors}, layout: false %>
+  <form action="/sessions" method="POST">
+    <label for="user[email]">Email:</label>
+    <input type="email" name="user[email]"><br>
+    <label for="user[password]">Password:</label>
+    <input type="password" name="user[password]"><br><br>
+    <input type="submit" value="Login">
+  </form>

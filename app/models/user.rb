@@ -21,10 +21,14 @@ class User < ActiveRecord::Base
     self.hashed_password = @password # stores the hashed password in the database within the 'hashed_password' column of the 'users' table
   end
 
-  def authenticate(plain_text_password)
-    # 'self.password' below calls the 'password' getter method above
-    # '==' below is BCrypt's special version of '=='
-    self.password == plain_text_password
+  def self.authenticate(user_email, plain_text_password)
+    user = User.find_by(:email => user_email)
+    if user && user.password == plain_text_password
+      user
+    else
+      nil
+      # This is an error message that is being returned
+    end
   end
 
 end
