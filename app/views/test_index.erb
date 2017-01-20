@@ -1,3 +1,12 @@
-<!-- <h1>THIS IS A TEST VIEW</h1>
+<div id="map"></div>
 
-<a href="/users/new">Register</a> -->
+<% if logged_in? %>
+  <h3>Add a playlist here!</h3>
+  <form id="add-playlist">
+    <label for="playlist[title]">Title:</label>
+    <input type="text" name="playlist[title]"><br>
+    <label for="playlist[url]">URL:</label>
+    <input type="url" name="playlist[url]"><br><br>
+    <input type="submit" value="Add SoundTrek">
+  </form>
+<% end %>
